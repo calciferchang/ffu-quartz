@@ -7,23 +7,42 @@
 FF Ultima:         https://github.com/soulhotel/FF-ULTIMA
 Wiki:              https://github.com/soulhotel/FF-ULTIMA/wiki
 Latest Version:    https://github.com/soulhotel/FF-ULTIMA/releases/latest                 
-License:           MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE
+License:           https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE MPL 2.0
 
 \////////////////////////////////////////////////////////////////////////////////////////*/
 
-@import url(theme/all-global-positioning.css);
-@import url(theme/all-color-schemes.css);
+@import url(theme/ffu-global-positioning.css);
+@import url(theme/ffu-internal-appearance.css);
+@import url(theme/ffu-private-browsing.css);
 
-@import url(theme/function-sidebar-autohide.css);
-@import url(theme/function-privatemode.css); /* sourced from MOG */
-@import url(theme/theme-urlbar.css);
-@import url(theme/function-extensions-menu.css);
+@import url(theme/color-schemes/apply-cs.css); /*color schemes*/
 
-@import url(theme/theme-xstyle.css);
-@import url(theme/theme-context-menu.css);
-@import url(theme/theme-statuspanel.css);
-@import url(theme/theme-findbar.css);
-@import url(theme/theme-PIP.css);
-@import url(theme/theme-tab-audio-indicator.css);
-@import url(theme/theme-windowcontrols.css); 
-@import url(theme/all-global-configurations.css);
+@import url(theme/settings-context-menus.css);
+@import url(theme/settings-extensions-panel.css);
+
+@import url(theme/settings-urlbar.css);
+@import url(theme/settings-navbar.css);
+@import url(theme/settings-navbar-windowcontrols.css);
+
+@import url(theme/settings-sidebar-sidebery.css);
+
+@import url(theme/settings-TABS.css);
+
+@import url(theme/ffu-special-configs.css);
+
+/* these are defaults set by firefox source content-area.css Line 7-13
+https://searchfox.org/mozilla-central/source/browser/themes/shared/tabbrowser/content-area.css#7-13 */
+
+@media (-moz-content-prefers-color-scheme: light) {
+    :root {--tabpanel-background-color: #f9f9fb !important;}
+}
+@media (-moz-content-prefers-color-scheme: dark) {
+    :root {--tabpanel-background-color: #2b2a33 !important;}
+}
+
+/*
+transparency
+#tabbrowser-tabs[orient="vertical"][overflow]::after {
+  content: none !important;
+}
+*/

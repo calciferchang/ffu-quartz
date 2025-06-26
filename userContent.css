@@ -7,7 +7,7 @@
 FF Ultima:         https://github.com/soulhotel/FF-ULTIMA
 Wiki:              https://github.com/soulhotel/FF-ULTIMA/wiki
 Latest Version:    https://github.com/soulhotel/FF-ULTIMA/releases/latest                 
-License:           MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE
+License:           https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE MPL 2.0
 
 \////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -15,20 +15,15 @@ License:           MPL 2.0 https://github.com/soulhotel/FF-ULTIMA/blob/main/LICE
 - Dont like a websites styling? remove the line associated below.
 */
 
-@import url(theme/website-aboutconfig.css); /*styling for aboutconfig*/
-@import url(theme/website-styles.css); /*styling for multiple websites*/
-@import url(theme/website-newtab.css); /*new tab page*/
-@import url(theme/website-newtab-wallpapers.css); /*new tab page wallpapers*/
-@import url(theme/website-reddit.css); /*reddit*/
-@import url(theme/website-yt.css); /*youtube*/
-@import url(theme/website-private.css); /*private new tab page */
-@import url(theme/all-color-schemes-sidebery.css); /* sidebery color schemes */
-@import url(MyuserContent.css);
+@import url(theme/website-aboutconfig.css); /*        styling for aboutconfig */
+@import url(theme/website-styles.css); /*       styling for multiple websites */
+@import url(theme/website-newtab.css); /*                        new tab page */
+@import url(theme/website-reddit.css); /*                              reddit */
+@import url(theme/website-yt.css); /*                                 youtube */
+@import url(theme/website-private.css); /*               private new tab page */
 
-/* temporary fix for firefox 135 new tab spacing */
-@-moz-document url(about:newtab), url(about:home) {
-    .outer-wrapper .ds-top-sites .top-sites .top-sites-list {
-        /* margin: 0 5vw; */
-        justify-content: center !important;    
-    }
-}
+@import url(theme/color-schemes/apply-cs.css);           /* import color scheme colors */
+@import url(theme/color-schemes/apply-cs-extensions.css); /* apply colors to extensions */
+@import url(theme/color-schemes/apply-cs-wallpapers.css); /* apply colors to wallpapers */
+
+@import url(custom.css);
