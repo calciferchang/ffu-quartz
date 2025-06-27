@@ -25,7 +25,7 @@ Tutorial:          https://github.com/soulhotel/FF-ULTIMA/wiki/Create-a-Color-Sc
 @import url('kanagawa-wave/ffu-colorscheme.css')      -moz-pref("user.theme.kanagawa-wave");
 @import url('midnight/ffu-colorscheme.css')           -moz-pref("user.theme.midnight");
 @import url('scarlet/ffu-colorscheme.css')            -moz-pref("user.theme.scarlet");
-@import url('kiki/ffu-colorscheme.css')               -moz-pref("user.theme.kiki");
+@import url('quartz/ffu-colorscheme.css')               -moz-pref("user.theme.quartz");
 
 
 /* Add your Theme (Above) for the Browser ------------------------------------------------------------------------ */
@@ -42,7 +42,7 @@ Tutorial:          https://github.com/soulhotel/FF-ULTIMA/wiki/Create-a-Color-Sc
 @import url('kanagawa-wave/ffu-colorscheme.css')      -moz-pref("user.theme.kanagawa-wave");
 @import url('midnight/ffu-colorscheme.css')           -moz-pref("user.theme.midnight");
 @import url('scarlet/ffu-colorscheme.css')            -moz-pref("user.theme.scarlet");
-@import url('kiki/ffu-colorscheme.css')               -moz-pref("user.theme.kiki");
+@import url('quartz/ffu-colorscheme.css')               -moz-pref("user.theme.quartz");
 
 /* Adding your Theme (Above) makes the colors available to websites & extensions -------------------------------- */
 
@@ -97,7 +97,7 @@ Tutorial:          https://github.com/soulhotel/FF-ULTIMA/wiki/Create-a-Color-Sc
   @media (prefers-color-scheme: light) {background-image: url("walls/scarlet.jpg") !important;}
 }}
 
-@media -moz-pref("user.theme.kiki") { body {
+@media -moz-pref("user.theme.quartz") { body {
   @media (prefers-color-scheme: dark) {background-image: url("walls/kanagawa-wave.jpg") !important;}
   @media (prefers-color-scheme: light) {background-image: url("walls/kanagawa-wave.jpg") !important;}
 }}
