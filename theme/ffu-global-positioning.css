@@ -58,11 +58,14 @@ Vertical Tabs Hidden in Private
     --uc-topbars-combined-height: calc(var(--uc-menubar-height) + var(--uc-navbar-height) + var(--uc-tabbar-height) + var(--uc-bookbar-height));
     /*rounded corners*/
     --uc-all-border-radius: 10px;
-    --uc-content-border-radius: var(--uc-all-border-radius);
+
+    /* nested rounded corners */
+    --uc-content-border-radius: max(4px, calc(var(--uc-all-border-radius) - var(--uc-content-outer-margins)));
     --uc-tab-border-radius: var(--uc-all-border-radius);
     --uc-sidebar-border-radius: var(--uc-all-border-radius);
     --uc-button-border: 4px;
     /* margins */
+    --uc-content-outer-margins: 8px;
     --uc-content-margins: 2px 5px 5px 0px;
     --uc-tab-margins: 3.5px 0 5px 0px;
     --uc-sb-margins: 2px -3px 5px 0px;
@@ -293,8 +296,10 @@ even when fullscreen mode, we track
 /* Slightly relaxed spacing by calcifer ----------------------------------------------*/
 
 @media -moz-pref("ultima.spacing.slightlyrelaxed") {
-    :root, #main-window, body {--uc-content-margins: 4px 12px 12px 4px !important;}
-    #sidebar-box {margin-top:15px !important; margin-bottom: 40px !important;}
+    :root, #main-window, body {
+        --uc-content-margins: 4px 8px 8px 4px !important;
+    }
+    
 }
 
 /* Relaxed spacing ----------------------------------------------------------------------*/
