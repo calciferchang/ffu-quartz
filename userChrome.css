@@ -14,7 +14,7 @@ License:           https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE MPL 
 @import url(theme/ffu-global-positioning.css);
 @import url(theme/ffu-internal-appearance.css);
 @import url(theme/ffu-private-browsing.css);
-
+@import url(theme/settings-sidebar-sidebery.css);
 @import url(theme/color-schemes/apply-cs.css); /*color schemes*/
 
 @import url(theme/settings-context-menus.css);
@@ -24,7 +24,7 @@ License:           https://github.com/soulhotel/FF-ULTIMA/blob/main/LICENSE MPL 
 @import url(theme/settings-navbar.css);
 @import url(theme/settings-navbar-windowcontrols.css);
 
-@import url(theme/settings-sidebar-sidebery.css);
+
 
 @import url(theme/settings-TABS.css);
 

@@ -456,8 +456,8 @@ box-shadow: none !important;}}
 
 /* custom sizes */
 #sidebar-box {
-    max-width: 50vw !important;
-    min-width: 40px !important;
+    max-width: 20vw !important;
+    min-width: 10vw !important;
     width: 18em;
 }
 /* custom splitter - resizeable bar */

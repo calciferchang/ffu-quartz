@@ -144,7 +144,162 @@ Another - applying colors to extension
 
         --popup-bg: var(--uc-context-menu) !important;
         --popup-fg: var(--uc-text) !important;
-        --popup-scrollbar-color: var(--uc-accent-color-1)
+        --popup-scrollbar-color: var(--uc-accent-color-1);
+
+        --notification-bg: var(--uc-context-menu) !important;
+        --notification-fg: var(--uc-text) !important;
+
+        --btn-border-radius: var(--uc-button-border-radius) !important;
+        --scroll-color:  color-mix(in srgb, var(--uc-accent-color-1) 40%, transparent 60%) !important;
+    }
+    @media -moz-pref("user.theme.dark.a"), @media -moz-pref("user.theme.dark.midnight") {
+        #root.root {
+                --ctx-menu-shadow: 0 0 0 1px rgb(56, 60, 64), 0 1px 16px 0 rgba(0,0,0,0.282) !important;
+            }
+    }
+    @media -moz-pref("user.theme.light.a"), @media -moz-pref("user.theme.light.gruvbox") {
+        #root.root {
+                --ctx-menu-shadow: 0 0 0 1px var(--uc-accent-color-1), 0 1px 16px 0 rgba(100,100,100,0.282) !important;
+            }
+    }
+
+}}
+
+/* Sidebery - modified for Quartz color scheme --------------------------------------------- */
+
+@-moz-document regexp("moz-extension://.*/sidebar/sidebar.html") {
+@media -moz-pref("user.theme.xtension.quartz.sidebery") {
+    
+    @media (prefers-color-scheme: dark) { #root.root {
+        --frame-bg: var(--uc-browser-color) !important;
+        --toolbar-bg: var(--uc-browser-color) !important;
+        --frame-fg: var(--uc-text) !important;
+        --toolbar-fg: var(--uc-text) !important;
+        --uc-pinned-tab-background: #f1f2f3 !important;
+    }}
+    @media (prefers-color-scheme: light) { #root.root {
+        --frame-bg: var(--uc-browser-color) !important;
+        --toolbar-bg: var(--uc-browser-color) !important;
+        --frame-fg: var(--uc-text) !important;
+        --toolbar-fg: var(--uc-text) !important;
+        --uc-pinned-tab-background: var(--tabs-normal-bg) !important;
+    }}
+    /* Global (to Sidebery) Styles ---------------------------------*/
+    #root.root {
+        --general-margin: 2px !important;
+        --general-border-radius: var(--uc-button-border-radius) !important;
+    }
+    /* Header Panel ------------------------------------------------*/
+    #root.root {
+        --toolbar-scrollbar-color: var(--uc-accent-i) !important;
+        --frame-el-overlay-selected-bg: var(--uc-button-selected) !important;
+        --frame-el-overlay-selected-border: var(--uc-accent-color-1) !important;
+        --frame-el-overlay-hover-bg: rgba(0,0,0,0.05) !important;
+        --frame-scrollbar-color: var(--uc-accent-i) !important;
+        --toolbar-el-overlay-selected-bg: var(--uc-button-selected) !important;
+        --toolbar-el-overlay-hover-bg: var(--uc-button-selected) !important;
+        --toolbar-el-overlay-active-bg: var(--uc-button-selected) !important;
+        --toolbar-el-overlay-active-border: var(--uc-accent-color-1) !important;
+        --nav-btn-fg: var(--uc-text) !important;
+        --nav-btn-accent: color-mix(in srgb, var(--uc-accent-color-5) 40%, black 60%) !important;
+        --nav-btn-active-shadow: var(--uc-box-shadow) !important;
+    }
+    .NavigationBar .nav-item .audio { display: none !important; }
+    @media (max-width: 50px) { .BottomBar{padding-left:1px !important;}.static-btns{padding-left:3px !important;} }
+    
+    /* Pinned Tabs -----------------------------------------------*/
+    /* opinionated: Changes pinned tabs bar from flexbox to grid */
+
+    #root[data-pinned-tabs-position="panel"] .PinnedTabsBar {
+        display: grid !important;
+        grid-auto-flow: row;
+        grid-template-columns: repeat(4, minmax(24px, 1fr));
+        grid-auto-rows: 44px;
+        gap: 6px !important;
+    }
+    .Tab[data-pin="true"] {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .PinnedTabsBar .Tab .body  {
+        background-color: rgba(0,0,0,0.05) !important;;
+    }
+    .PinnedTabsBar .Tab[data-active="true"] .body {
+        background-color: var(--tabs-activated-bg) !important;
+    }
+    
+    @media (max-width:250px) {
+        #root[data-pinned-tabs-position="panel"] .PinnedTabsBar {
+            grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    }}
+
+    /* Tabs ----------------------------------------------------*/
+    #root.root {
+        --tabs-normal-fg: var(--uc-accent-color-2) !important;
+        --tabs-normal-bg: transparent;
+        --tabs-activated-bg: var(--uc-button-selected) !important;
+        --tabs-activated-fg: var(--uc-accent-color-5) !important;
+        --tabs-border-radius: var(--uc-button-border-radius) !important;
+        --tabs-activated-shadow: var(--uc-box-shadow) !important;
+        --tabs-progress-bg: var(--uc-accent-color-5) !important;
+        --tabs-height: 35px !important;
+
+        --tabs-discarded-favicon-opacity: 0.5 !important;
+        --tabs-discarded-title-opacity: 0.6 !important;
+        --tabs-indent: 30px !important; /* OR 20 */
+        --tabs-audio-btn-width: 30px !important;
+        --ntb-border-radius: var(--uc-button-border-radius) !important;
+    }
+    .Tab[data-pin="false"] .fav {margin-left: 9px !important;}
+
+    .Tab .title {
+        color: var(--uc-text) !important;
+    }
+    .Tab[data-discarded=true]>.body>.t-box>.title {
+        font-style: italic !important; 
+    }
+    /* Fix Tabs Tree --------------------------------------------*/
+    @media screen and (max-width: 42px) {
+        #root {
+            --tabs-indent: unset !important;
+        }
+        .ScrollBox > .scroll-container {
+            overflow: hidden !important;
+        }
+        .Tab .body::after {
+            display: none !important;
+        }
+        .Tab .audio {
+            left: 10px !important;
+            transform: scale(0.8) !important;
+            transform: translateY(6px) translateX(-15px) !important;
+            z-index: 99 !important;
+        }
+        .Tab[data-audible] svg.-loud,
+        .Tab[data-muted] svg.-mute {
+            transform: translateY(0px) translateX(0px) !important;
+        }
+    }
+    /* Bookmarks ------------------------------------------------*/
+    #root.root {
+        --bookmarks-indent: 0px !important;
+    }
+    /* Popups ---------------------------------------------------*/
+    #root.root {
+        --ctx-menu-bg: var(--uc-context-menu) !important;
+        --ctx-menu-fg: var(--uc-text) !important;
+
+        --ctx-menu-padding: 5px !important;
+        --ctx-menu-border-radius: 8px !important;
+        --ctx-menu-text-opt-inner-gap: 5px !important;
+
+        --ctx-menu-separator: var(--uc-layered-background) !important;
+        --ctx-menu-shadow: 0 0 0 2px var(--uc-accent-color-1), 0 1px 16px 0 rgba(0,0,0,0.5) !important;
+
+        --popup-bg: var(--uc-context-menu) !important;
+        --popup-fg: var(--uc-text) !important;
+        --popup-scrollbar-color: var(--uc-accent-color-1);
 
         --notification-bg: var(--uc-context-menu) !important;
         --notification-fg: var(--uc-text) !important;
